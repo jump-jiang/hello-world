@@ -1,0 +1,12 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: eureka-server #eureka实例的主机名
+  client:
+    register-with-eureka: false #false表示不向注册中心注册自己
+    fetch-registry: false #false表示自己端就是注册中心，并不需要去检索服务
+    service-url:
+    #http://${eureka.instance.hostname}:${server.port}/eureka/ 设置Eureka Server交互的地址查询服务和注册服务地址
+      defaultZone: http://localhost:8761/eureka/
